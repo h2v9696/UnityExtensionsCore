@@ -12,8 +12,9 @@ using UnityEditor;
 using UnityEditor.AddressableAssets;
 using UnityEditor.AddressableAssets.Settings;
 using UnityEditor.AddressableAssets.Settings.GroupSchemas;
+using H2V.ExtensionsCore.AssetReferences;
 
-namespace H2V.ExtensionsCore.AssetReferences.Tests
+namespace H2V.ExtensionsCore.Tests.AssetReferences
 {
     [TestFixture, Category("Unit Tests")]
     public class SceneAssetReferenceTests
