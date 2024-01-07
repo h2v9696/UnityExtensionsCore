@@ -1,17 +1,11 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using UnityEngine.AddressableAssets;
 using Cysharp.Threading.Tasks;
 using NUnit.Framework;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.TestTools;
 using H2V.ExtensionsCore.Editor.Helpers;
 using UnityEditor;
 using UnityEditor.AddressableAssets;
-using UnityEditor.AddressableAssets.Settings;
-using UnityEditor.AddressableAssets.Settings.GroupSchemas;
 using H2V.ExtensionsCore.AssetReferences;
 
 namespace H2V.ExtensionsCore.Tests.AssetReferences
