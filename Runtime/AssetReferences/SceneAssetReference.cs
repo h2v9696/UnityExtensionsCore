@@ -4,12 +4,14 @@ using Cysharp.Threading.Tasks;
 using UnityEngine.ResourceManagement.ResourceProviders;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.SceneManagement;
+using UnityEngine;
 
 namespace H2V.ExtensionsCore.AssetReferences
 {
     [Serializable]
     public class SceneAssetReference : AssetReference
     {
+        public new AsyncOperationHandle<SceneInstance> OperationHandle { get; private set; }
         public SceneAssetReference(string guid) : base(guid) { }
 
         public override bool ValidateAsset(string path)
@@ -22,14 +24,21 @@ namespace H2V.ExtensionsCore.AssetReferences
         {
             if (OperationHandle.IsValid() && OperationHandle.IsDone)
             {
-                return ((SceneInstance) OperationHandle.Result).Scene;
+                return OperationHandle.Result.Scene;
             }
-            var handler = LoadSceneAsync(loadMode, activateOnLoad, priority);
+            // I saving this and handle it myself because AssetReference.LoadSceneAsync() error when load twice
+            OperationHandle = Addressables.LoadSceneAsync(this, loadMode, activateOnLoad, priority);
             
-            await UniTask.WaitUntil(() => handler.IsDone);
-            if (handler.Status == AsyncOperationStatus.Succeeded)
-                return handler.Result.Scene;
+            await UniTask.WaitUntil(() => OperationHandle.IsDone);
+            if (OperationHandle.Status == AsyncOperationStatus.Succeeded)
+                return OperationHandle.Result.Scene;
             return default;
+        }
+
+        public void ReleaseHandle()
+        {
+            if (OperationHandle.IsValid())
+                Addressables.Release(OperationHandle);
         }
     }
 }

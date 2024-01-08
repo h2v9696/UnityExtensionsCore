@@ -2,7 +2,8 @@
     "name": "H2V.ExtensionsCore.Editor",
     "rootNamespace": "H2V",
     "references": [
-        "GUID:69448af7b92c7f342b298e06a37122aa"
+        "GUID:69448af7b92c7f342b298e06a37122aa",
+        "GUID:2f65b432db5d25c43977927c2ba8960e"
     ],
     "includePlatforms": [
         "Editor"

@@ -31,6 +31,8 @@ namespace H2V.ExtensionsCore.Editor.Helpers
             var correctPropertyName = isField ? $"<{propertyName}>k__BackingField" : propertyName;
             var property = serializedObject.FindProperty(correctPropertyName);
 
+            property.ClearArray();
+
             for (int i = 0; i < values.Length; i++)
             {
                 property.InsertArrayElementAtIndex(0);
