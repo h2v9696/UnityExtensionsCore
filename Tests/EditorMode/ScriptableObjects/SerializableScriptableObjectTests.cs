@@ -4,6 +4,7 @@ using UnityEditor;
 
 namespace H2V.ExtensionsCore.Tests.ScriptableObjects
 {
+    [TestFixture, Category("Smoke Tests")]
     public class SerializableScriptableObjectTests
     {
         [Test]
