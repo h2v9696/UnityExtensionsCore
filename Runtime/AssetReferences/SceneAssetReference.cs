@@ -35,10 +35,10 @@ namespace H2V.ExtensionsCore.AssetReferences
             return default;
         }
 
-        public void ReleaseHandle()
+        public override void ReleaseAsset()
         {
-            if (OperationHandle.IsValid())
-                Addressables.Release(OperationHandle);
+            if (!OperationHandle.IsValid()) return;
+            Addressables.Release(OperationHandle);
         }
     }
 }

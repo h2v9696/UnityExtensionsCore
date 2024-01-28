@@ -14,6 +14,7 @@ namespace H2V.ExtensionsCore.AssetReferences
     [Serializable]
     public class AudioAssetReference : AssetReferenceT<AudioClip>
     {
+        public new AsyncOperationHandle<AudioClip> OperationHandle { get; private set; }
         public AudioAssetReference(string guid) : base(guid) { }
 
         public override bool ValidateAsset(Object obj)
@@ -33,16 +34,23 @@ namespace H2V.ExtensionsCore.AssetReferences
 
         public async UniTask<AudioClip> TryLoadAsset()
         {
-            var handler = LoadAssetAsync<AudioClip>();
             if (OperationHandle.IsValid() && OperationHandle.IsDone)
             {
-                return (AudioClip) OperationHandle.Result;
+                return OperationHandle.Result;
             }
+
+            OperationHandle = Addressables.LoadAssetAsync<AudioClip>(this);
             
-            await UniTask.WaitUntil(() => handler.IsDone);
-            if (handler.Status == AsyncOperationStatus.Succeeded)
-                return handler.Result;
+            await UniTask.WaitUntil(() => OperationHandle.IsDone);
+            if (OperationHandle.Status == AsyncOperationStatus.Succeeded)
+                return OperationHandle.Result;
             return default;
+        }
+
+        public override void ReleaseAsset()
+        {
+            if (!OperationHandle.IsValid()) return;
+            Addressables.Release(OperationHandle);
         }
     }
 }

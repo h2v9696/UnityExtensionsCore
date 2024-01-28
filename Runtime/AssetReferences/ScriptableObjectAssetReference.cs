@@ -15,6 +15,7 @@ namespace H2V.ExtensionsCore.AssetReferences
     public class ScriptableObjectAssetReference<TScriptableObject> : AssetReferenceT<TScriptableObject>
         where TScriptableObject : ScriptableObject
     {
+        public new AsyncOperationHandle<TScriptableObject> OperationHandle { get; private set; }
         public ScriptableObjectAssetReference(string guid) : base(guid) { }
 
         public override bool ValidateAsset(Object obj)
@@ -34,16 +35,23 @@ namespace H2V.ExtensionsCore.AssetReferences
 
         public async UniTask<TScriptableObject> TryLoadAsset()
         {
-            var handler = LoadAssetAsync<TScriptableObject>();
             if (OperationHandle.IsValid() && OperationHandle.IsDone)
             {
-                return (TScriptableObject) OperationHandle.Result;
+                return OperationHandle.Result;
             }
+
+            OperationHandle = Addressables.LoadAssetAsync<TScriptableObject>(this);
             
-            await UniTask.WaitUntil(() => handler.IsDone);
-            if (handler.Status == AsyncOperationStatus.Succeeded)
-                return handler.Result;
+            await UniTask.WaitUntil(() => OperationHandle.IsDone);
+            if (OperationHandle.Status == AsyncOperationStatus.Succeeded)
+                return OperationHandle.Result;
             return default;
+        }
+
+        public override void ReleaseAsset()
+        {
+            if (!OperationHandle.IsValid()) return;
+            Addressables.Release(OperationHandle);
         }
     }
 }
