@@ -4,7 +4,6 @@ using UnityEditor.AddressableAssets;
 using UnityEditor.AddressableAssets.Settings;
 using UnityEditor.AddressableAssets.Settings.GroupSchemas;
 using UnityEngine;
-using UnityEngine.Android;
 
 namespace H2V.ExtensionsCore.Editor.Helpers
 {

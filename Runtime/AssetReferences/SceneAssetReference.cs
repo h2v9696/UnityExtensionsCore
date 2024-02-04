@@ -4,7 +4,6 @@ using Cysharp.Threading.Tasks;
 using UnityEngine.ResourceManagement.ResourceProviders;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.SceneManagement;
-using UnityEngine;
 
 namespace H2V.ExtensionsCore.AssetReferences
 {

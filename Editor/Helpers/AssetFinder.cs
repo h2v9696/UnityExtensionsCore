@@ -47,7 +47,7 @@ namespace H2V.ExtensionsCore.Editor.Helpers
         {
             var allAssets = FindAssetsWithType<T>(assetName, path);
 
-            return allAssets.FirstOrDefault() ;
+            return allAssets.FirstOrDefault();
         }
     }
 }
