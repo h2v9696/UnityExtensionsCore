@@ -10,7 +10,7 @@ namespace H2V.ExtensionsCore.Editor.Helpers
         /// <summary>
         /// This method is used to get all assets from a type.
         /// </summary>
-        /// <param name="additionOption">For example add nbame to find with name</param>
+        /// <param name="additionOption">For example add name to find with name</param>
         /// <param name="path">Find within path.</param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>

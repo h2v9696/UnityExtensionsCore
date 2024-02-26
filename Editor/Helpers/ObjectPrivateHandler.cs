@@ -56,5 +56,14 @@ namespace H2V.ExtensionsCore.Editor.Helpers
                 BindingFlags.NonPublic | BindingFlags.Instance);
             method.Invoke(obj, parameters);
         }
+
+        public static object GetPrivateProperty(this Object obj, string propertyName,
+            bool isField = false)
+        {
+            var serializedObject = new SerializedObject(obj);
+            var correctPropertyName = isField ? $"<{propertyName}>k__BackingField" : propertyName;
+            var property = serializedObject.FindProperty(correctPropertyName);
+            return property.boxedValue;
+        }
     }
 }
