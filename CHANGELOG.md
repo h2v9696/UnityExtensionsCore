@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/h2v9696/UnityExtensionsCore/compare/v1.0.0...v1.1.0) (2024-09-03)
+
+
+### Features
+
+* WebGL utilities ([d624527](https://github.com/h2v9696/UnityExtensionsCore/commit/d62452773ff2c9ce28d07ad6005c56161de10c8b))
+
 ## 1.0.0 (2024-09-03)
 
 
