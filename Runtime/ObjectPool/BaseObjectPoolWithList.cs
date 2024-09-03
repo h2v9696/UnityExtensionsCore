@@ -27,5 +27,14 @@ namespace H2V.ExtensionsCore.ObjectPool
             _items.Remove(item);
             base.OnDestroyItem(item);
         }
+
+        public override void ReleaseAll()
+        {
+            base.ReleaseAll();
+            while (_items.Count > 0)
+            {
+                ReleaseItem(_items[0]);
+            }
+        }
     }
 }

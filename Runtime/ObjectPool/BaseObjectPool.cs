@@ -28,7 +28,7 @@ namespace H2V.ExtensionsCore.ObjectPool
         protected virtual void OnGetItem(TItem item)
         {
             if (_isOrderNeeded)
-                item.transform.SetAsFirstSibling();
+                item.transform.SetAsLastSibling();
             item.gameObject.SetActive(true);
         }
 
