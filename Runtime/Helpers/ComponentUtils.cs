@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace H2V.ExtensionsCore.Common
+namespace H2V.ExtensionsCore.Helper
 {
     public static class ComponentUtils
     {
