@@ -1,21 +1,19 @@
-# Unity Extension Core
+# Unity Extension Core<!-- omit in toc -->
 
-## Table of Contents
-- [Unity Extension Core](#unity-extension-core)
-  - [Table of Contents](#table-of-contents)
-  - [Introduction](#introduction)
-  - [Requirements](#requirements)
-  - [Contents](#contents)
-    - [Asset References](#asset-references)
-    - [Common Utilities](#common-utilities)
-    - [Editor Tools](#editor-tools)
-    - [Events](#events)
-      - [Action Dispatcher](#action-dispatcher)
-      - [Scriptable Object Events](#scriptable-object-events)
-    - [Helpers](#helpers)
-    - [ObjectPool](#objectpool)
-    - [Scriptable Objects](#scriptable-objects)
-    - [WebGL](#webgl)
+## Table of Contents<!-- omit in toc -->
+- [Introduction](#introduction)
+- [Installation](#installation)
+- [Contents](#contents)
+  - [Asset References](#asset-references)
+  - [Common Utilities](#common-utilities)
+  - [Editor Tools](#editor-tools)
+  - [Events](#events)
+    - [Action Dispatcher](#action-dispatcher)
+    - [Scriptable Object Events](#scriptable-object-events)
+  - [Helpers](#helpers)
+  - [ObjectPool](#objectpool)
+  - [Scriptable Objects](#scriptable-objects)
+  - [WebGL](#webgl)
 
 ## Introduction
 These are the utilities I always use as a core package when developing games with Unity.\
@@ -24,10 +22,14 @@ Feel free to use them and contribute.
 I've separated the packages, with each having its own asmdef, \
 so you can choose which one you want to use and import to your asmdef without needing to compile the others.
 
-## Requirements
+## Installation
 This package require UniTask so install it via Package Manager.\
 Since I haven't found a way to install it automatically with this package...\
 [UniTask Installation](https://github.com/Cysharp/UniTask?tab=readme-ov-file#upm-package) 
+Use Unity Package Manager to install.\
+
+After that add git address in Unity Package Manager: https://github.com/h2v9696/UnityExtensionsCore.git\
+Or you can use git to clone this repository, then copy the whole folder to your project.
 
 ## Contents
 ### Asset References
@@ -48,6 +50,8 @@ _assetRef.ReleaseAsset();
 
 ### Common Utilities
 `CacheableComponentGetter`: Add this to a GameObject and its can get and cache your Component to slightly increase performance.\
+`ClickToPlace`: Add to a GameObject in 2D scene mode to has click to place feature.\
+`DisableLog`: Disable all log other than exception in release build.\
 
 ### Editor Tools
 `ReadOnlyAttribute`: Make a field read only (cannot be edited in inspector).
@@ -93,7 +97,8 @@ You can do the same with `GenericEventChannelListener<T>`
 
 ### Helpers
 `gameObject.GetOrAddComponent<T>()`: Get component and if it doesn't exits add it to the gameObject.\
-`floatValue.NearlyEqual()`: Same as `Mathf.Approximate` but you can control epsilon.
+`floatValue.NearlyEqual()`: Same as `Mathf.Approximate` but you can control epsilon.\
+`LayerMaskExtensions`: Helper method when work with Layer Mask.
 
 ### ObjectPool
 Using UnityEngine.ObjectPool built-in to create pool manager components.\
