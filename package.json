@@ -8,5 +8,10 @@
   "dependencies": {
     "com.cysharp.unitask": "2.5.0",
     "com.unity.addressables": "1.21.19"
+  },
+  "author": {
+    "name": "H2V",
+    "email": "h2v9696@gmail.com",
+    "url": "https://github.com/h2v9696"
   }
 }

@@ -7,6 +7,7 @@ namespace H2V.ExtensionsCore.Common
     /// <summary>
     /// This class is used to cache components to avoid calling GetComponent/TryGetComponent multiple times.
     /// </summary>
+    [AddComponentMenu("H2V/Tools/Cachable Component Getter")]
     public class CacheableComponentGetter : MonoBehaviour
     {
         private readonly Dictionary<Type, object> _cachedComponents = new();
