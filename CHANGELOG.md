@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/h2v9696/UnityExtensionsCore/compare/v1.1.0...v1.2.0) (2024-09-05)
+
+
+### Features
+
+* create LICENSE ([fc93e3d](https://github.com/h2v9696/UnityExtensionsCore/commit/fc93e3d1433d5619d9943e3260e68ab93b66cd3f))
+
 ## [1.1.0](https://github.com/h2v9696/UnityExtensionsCore/compare/v1.0.0...v1.1.0) (2024-09-03)
 
 
