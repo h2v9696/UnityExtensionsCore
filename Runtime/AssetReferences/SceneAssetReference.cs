@@ -21,14 +21,14 @@ namespace H2V.ExtensionsCore.AssetReferences
         public async UniTask<Scene> TryLoadScene(LoadSceneMode loadMode, 
             bool activateOnLoad = true, int priority = 0)
         {
-            if (OperationHandle.IsValid() && OperationHandle.IsDone)
+            if (OperationHandle.IsValid() && OperationHandle.IsDone && OperationHandle.Result.Scene.isLoaded)
             {
                 return OperationHandle.Result.Scene;
             }
             // I saving this and handle it myself because AssetReference.LoadSceneAsync() error when load twice
             OperationHandle = Addressables.LoadSceneAsync(this, loadMode, activateOnLoad, priority);
             
-            await UniTask.WaitUntil(() => OperationHandle.IsDone);
+            await UniTask.WaitUntil(() => OperationHandle.IsValid() && OperationHandle.IsDone);
             if (OperationHandle.Status == AsyncOperationStatus.Succeeded)
                 return OperationHandle.Result.Scene;
             return default;
