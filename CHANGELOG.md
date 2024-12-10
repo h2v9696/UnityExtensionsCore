@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.0](https://github.com/h2v9696/UnityExtensionsCore/compare/v1.1.0...v1.2.0) (2024-12-10)
+
+
+### Features
+
+* some more handy component and helper ([b7d168b](https://github.com/h2v9696/UnityExtensionsCore/commit/b7d168b23062b4c614ee5b1c3a6a1a00f999ec40))
+
+
+### Bug Fixes
+
+* cannot load scene ([416c54f](https://github.com/h2v9696/UnityExtensionsCore/commit/416c54fa49ffcc7014fc56b4f28eaaab1877e4e2))
+
 ## [1.1.0](https://github.com/h2v9696/UnityExtensionsCore/compare/v1.0.0...v1.1.0) (2024-09-03)
 
 
