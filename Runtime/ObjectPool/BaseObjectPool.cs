@@ -44,7 +44,7 @@ namespace H2V.ExtensionsCore.ObjectPool
 
         public virtual void ReleaseItem(TItem item)
         {
-            if (item == null || !item.gameObject.activeInHierarchy)
+            if (item == null || !item.gameObject.activeSelf)
                 return;
 
             _pool.Release(item);
