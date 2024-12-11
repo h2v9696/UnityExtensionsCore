@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/h2v9696/UnityExtensionsCore/compare/v1.2.0...v1.2.1) (2024-12-11)
+
+
+### Bug Fixes
+
+* release all cause stuck when object disabled ([b4cec62](https://github.com/h2v9696/UnityExtensionsCore/commit/b4cec6239ddb1b0cce2a4d06ae89c235105a7341))
+
 ## [1.2.0](https://github.com/h2v9696/UnityExtensionsCore/compare/v1.1.0...v1.2.0) (2024-12-10)
 
 
