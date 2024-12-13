@@ -1,6 +1,6 @@
 {
   "name": "com.h2v.extensions-core",
-  "version": "1.1.0",
+  "version": "1.2.2",
   "displayName": "Extensions Core",
   "description": "Common extenstions core when develop with Unity",
   "unity": "2022.3",
