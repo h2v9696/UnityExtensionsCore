@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.2](https://github.com/h2v9696/UnityExtensionsCore/compare/v1.2.1...v1.2.2) (2024-12-13)
+
+
+### Bug Fixes
+
+* dynamic init pool ([c70ae87](https://github.com/h2v9696/UnityExtensionsCore/commit/c70ae874d24f961aaa61c53532a728074ba4c842))
+
 ## [1.2.1](https://github.com/h2v9696/UnityExtensionsCore/compare/v1.2.0...v1.2.1) (2024-12-11)
 
 
