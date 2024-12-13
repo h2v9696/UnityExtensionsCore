@@ -13,11 +13,8 @@ namespace H2V.ExtensionsCore.ObjectPool
 
         private IObjectPool<TItem> _pool;
 
-        protected virtual void Awake()
-        {
-            _pool = new ObjectPool<TItem>(OnCreateItem, OnGetItem, OnReleaseItem,
-                OnDestroyItem);
-        }
+        private IObjectPool<TItem> Pool => _pool ??= new ObjectPool<TItem>(OnCreateItem, OnGetItem, OnReleaseItem,
+            OnDestroyItem);
 
         protected virtual TItem OnCreateItem()
         {
@@ -40,16 +37,16 @@ namespace H2V.ExtensionsCore.ObjectPool
         protected virtual void OnDestroyItem(TItem item)
             => Destroy(item.gameObject);
 
-        public virtual TItem GetItem() => _pool.Get();
+        public virtual TItem GetItem() => Pool.Get();
 
         public virtual void ReleaseItem(TItem item)
         {
             if (item == null || !item.gameObject.activeSelf)
                 return;
 
-            _pool.Release(item);
+            Pool.Release(item);
         }
 
-        public virtual void ReleaseAll() => _pool.Clear();
+        public virtual void ReleaseAll() => Pool.Clear();
     }
 }
