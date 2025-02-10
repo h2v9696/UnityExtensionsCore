@@ -19,5 +19,7 @@ namespace H2V.ExtensionsCore.Events.ScriptableObjects
 
             return EventRaised.Invoke(obj);
         }
+        
+        public virtual void RaiseEventWithoutReturn(T obj) => OnRaiseEvent(obj);
     }
 }

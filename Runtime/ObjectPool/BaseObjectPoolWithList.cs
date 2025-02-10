@@ -28,6 +28,15 @@ namespace H2V.ExtensionsCore.ObjectPool
             base.OnDestroyItem(item);
         }
 
+        public override void ReleaseItem(TItem item)
+        {
+            if (_items.Contains(item))
+            {
+                base.ReleaseItem(item);
+                _items.Remove(item);
+            }
+        }
+
         public override void ReleaseAll()
         {
             base.ReleaseAll();
