@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/h2v9696/UnityExtensionsCore/compare/v1.2.2...v1.3.0) (2025-02-10)
+
+
+### Features
+
+* release item in pool list correctly and add QoL to generic return event ([0df1a09](https://github.com/h2v9696/UnityExtensionsCore/commit/0df1a09653e58c86f84da4120b3d68188735f8c3))
+
 ## [1.2.2](https://github.com/h2v9696/UnityExtensionsCore/compare/v1.2.1...v1.2.2) (2024-12-13)
 
 
