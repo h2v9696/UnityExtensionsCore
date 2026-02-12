@@ -8,9 +8,10 @@ var JsPlugins = {
 		document.body.appendChild(copyText);
     	copyText.select();
     	copyText.setSelectionRange(0, 99999);
-    	navigator.clipboard.writeText(copyText.value)
+    	navigator.clipboard.writeText(copyText.value);
+        
       	document.body.removeChild(copyText); 
-    }
+    },
 	
     TweetFromUnity: function (rawMessage) {
         var message = UTF8ToString(rawMessage);
