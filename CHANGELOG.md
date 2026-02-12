@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.1](https://github.com/h2v9696/UnityExtensionsCore/compare/v1.3.0...v1.3.1) (2026-02-12)
+
+
+### Bug Fixes
+
+* jslib error cause webgl build fail ([1ff5cc5](https://github.com/h2v9696/UnityExtensionsCore/commit/1ff5cc5ae79c59a16ccf70c6caeebf8fb89eb23a))
+
 ## [1.3.0](https://github.com/h2v9696/UnityExtensionsCore/compare/v1.2.2...v1.3.0) (2025-02-10)
 
 
